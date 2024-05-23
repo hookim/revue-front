@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import  { useStore }  from '../util/store'
 import { useRouter } from 'vue-router';
+import video from "../../../videos/video.mp4"
 
 const searchKeyword = ref("")
 const { setSearchKeyword } = useStore()
@@ -16,7 +17,7 @@ const switchHandler = () => {
 
 <template>
     <video autoplay loop ref="video">
-        <source src="../assets/video_small.mp4" type="video/mp4">
+        <source :src="video" type="video/mp4">
     </video>
     <div class="search-bar">
       <input placeholder="검색" v-model="searchKeyword">  
